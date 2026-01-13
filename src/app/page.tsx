@@ -6,6 +6,7 @@ import { useMousePosition } from "@/hooks/useMousePosition";
 import { useFPS } from "@/hooks/useFPS";
 import { HUD } from "@/components/HUD";
 import { CustomCursor } from "@/components/CustomCursor";
+import { ProfileSection } from "@/components/ProfileSection";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Scene = dynamic(() => import("@/components/Scene").then((mod) => mod.Scene), {
@@ -26,6 +27,7 @@ const SECTIONS = [
   { text: "AI & LLMs", subtitle: "LangChain • RAG • OpenAI • Azure AI" },
   { text: "CLOUD", subtitle: "AWS • Azure • Scalable Infrastructure" },
   { text: "LEADER", subtitle: "Engineering Teams • Product Strategy" },
+  { text: "PROFILE", subtitle: "Full Profile & Experience", isProfile: true },
 ];
 
 export default function Home() {
@@ -119,7 +121,7 @@ export default function Home() {
 
   return (
     <main className="relative w-screen h-screen overflow-hidden">
-      {/* 3D Scene with animated text */}
+      {/* 3D Scene or Profile Section */}
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSection}
@@ -141,29 +143,35 @@ export default function Home() {
           }}
           className="fixed inset-0"
         >
-          <Scene
-            mousePosition={mousePosition}
-            onParticleCount={handleParticleCount}
-            text={currentContent.text}
-          />
+          {(currentContent as { isProfile?: boolean }).isProfile ? (
+            <ProfileSection />
+          ) : (
+            <Scene
+              mousePosition={mousePosition}
+              onParticleCount={handleParticleCount}
+              text={currentContent.text}
+            />
+          )}
         </motion.div>
       </AnimatePresence>
 
-      {/* Animated subtitle - centered below main text */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={`subtitle-${currentSection}`}
-          className="fixed top-[58%] left-0 right-0 flex justify-center z-40 px-4"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -20, opacity: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <div className="text-[13px] tracking-[0.2em] md:tracking-[0.4em] text-white/40 font-light uppercase text-center mt-[5px]">
-            {currentContent.subtitle}
-          </div>
-        </motion.div>
-      </AnimatePresence>
+      {/* Animated subtitle - centered below main text (hidden on profile section) */}
+      {!(currentContent as { isProfile?: boolean }).isProfile && (
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`subtitle-${currentSection}`}
+            className="fixed top-[58%] left-0 right-0 flex justify-center z-40 px-4"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="text-[13px] tracking-[0.2em] md:tracking-[0.4em] text-white/40 font-light uppercase text-center mt-[5px]">
+              {currentContent.subtitle}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      )}
 
       {/* Section indicators */}
       <div className="fixed right-4 md:right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2">
