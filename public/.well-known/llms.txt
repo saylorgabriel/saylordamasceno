@@ -1,0 +1,122 @@
+# Saylor Damasceno - Software Engineer & AI Specialist
+
+> Tech Lead with 15+ years of experience in software engineering, specializing in back-end development, AI/LLMs, and cloud architecture.
+
+## Professional Summary
+
+Saylor Damasceno is a Tech Lead and Senior Software Engineer based in Campinas, São Paulo, Brazil. With over 15 years of experience in technology, he has built his career as a specialist in back-end development and software architecture, with a focus on PHP and modern high-performance technologies.
+
+Currently serving as Tech Lead at Consolide, Brazil's largest trademark registration company, he leads engineering teams delivering scalable solutions that combine robustness and innovation.
+
+In recent years, Saylor has expanded into the field of Generative Artificial Intelligence, exploring LLMs, LangChain, RAG (Retrieval-Augmented Generation), embeddings, and integrations with APIs from OpenAI, Azure, and AWS.
+
+## Core Expertise
+
+### Software Engineering
+- Back-end Development (PHP Specialist)
+- Software Architecture
+- System Design
+- API Development
+- Database Design
+- High-Performance Applications
+
+### Artificial Intelligence & Machine Learning
+- Large Language Models (LLMs)
+- LangChain Framework
+- RAG (Retrieval-Augmented Generation)
+- Vector Databases
+- Embeddings
+- OpenAI API Integration
+- Azure AI Services
+- AWS AI/ML Services
+- Prompt Engineering
+- AI System Architecture
+
+### Cloud & Infrastructure
+- Amazon Web Services (AWS)
+- Microsoft Azure
+- Cloud Architecture
+- Scalable Infrastructure
+- DevOps Practices
+- Security Engineering
+
+### Leadership
+- Technical Leadership
+- Engineering Team Management
+- Product Management
+- Strategic Planning
+- Agile Methodologies
+
+## Professional Experience
+
+### Consolide (2021 - Present)
+**Software Developer Technical Lead**
+- Leading engineering teams at Brazil's largest trademark registration company
+- Architecting and delivering scalable software solutions
+- Implementing AI-powered features and automation
+- Driving technical innovation and best practices
+
+### Superlógica Tecnologias (2007 - 2021)
+**13+ years of progressive growth:**
+- Technical Lead (2020-2021)
+- Product Manager (2017-2020)
+- Systems Analyst (2015-2016)
+- Web Developer (2007-2015)
+
+## Technical Skills
+
+### Programming Languages & Frameworks
+- PHP (Expert)
+- Python
+- JavaScript/TypeScript
+- Node.js
+- SQL
+
+### AI/ML Technologies
+- LangChain
+- OpenAI GPT Models
+- Azure OpenAI Service
+- RAG Architecture
+- Vector Databases (Pinecone, Weaviate, ChromaDB)
+- Embeddings (OpenAI, Hugging Face)
+- Prompt Engineering
+
+### Cloud Platforms
+- AWS (EC2, Lambda, S3, RDS, SageMaker)
+- Azure (App Service, Functions, Cosmos DB, OpenAI)
+- Docker & Containerization
+
+### Databases
+- MySQL/PostgreSQL
+- MongoDB
+- Redis
+- Vector Databases
+
+## Certifications
+- Security Engineering on AWS
+- IBM Blockchain Foundation Developer
+- IBM Blockchain Essentials
+- Strategic Thinking
+
+## Education
+- Blockchain, Cryptocurrencies and Digital Finance - UNINTER (2019-2021)
+- Systems Analysis and Development - Universidade Paulista (2011-2015)
+
+## Languages
+- Portuguese (Native)
+- English (Professional)
+
+## Contact Information
+- Email: saylorgabriel@hotmail.com
+- LinkedIn: linkedin.com/in/saylordamasceno
+- GitHub: github.com/saylorgabriel
+- Location: Campinas, São Paulo, Brazil
+
+## Keywords
+Software Engineer, Tech Lead, AI Engineer, LLM Specialist, Back-end Developer, PHP Developer, Python Developer, Cloud Architect, AWS, Azure, LangChain, RAG, Retrieval-Augmented Generation, OpenAI, GPT, Machine Learning, Artificial Intelligence, Software Architecture, Technical Leadership, Product Management, Brazil, Campinas, São Paulo, Senior Engineer, Full Stack, API Development, Microservices, DevOps, Agile, Scrum
+
+## Availability
+Open to consulting opportunities, technical advisory roles, and AI/LLM implementation projects.
+
+---
+Last Updated: 2025-01
