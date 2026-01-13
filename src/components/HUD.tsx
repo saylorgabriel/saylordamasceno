@@ -48,7 +48,7 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
           </div> */}
 
           {/* Role & Company */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 1 }}
@@ -60,32 +60,16 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
             <div className="text-[10px] tracking-[0.1em] text-white/25">
               @ Atlas
             </div>
-          </motion.div>
-
-          {/* Location */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
-            className="flex items-center gap-2"
-          >
-            <svg className="w-3 h-3 text-white/20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            <span className="text-[10px] tracking-[0.1em] text-white/20">
-              Campinas, SP, Brazil
-            </span>
-          </motion.div>
+          </motion.div> */}
 
           {/* Divider */}
-          <motion.div
+          {/* <motion.div
             className="w-12 h-px bg-white/10"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ delay: 1.8, duration: 0.8 }}
             style={{ transformOrigin: 'left' }}
-          />
+          /> */}
 
           {/* Experience Badge */}
           <motion.div
@@ -109,8 +93,24 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
             PHP • AI/LLMs • Cloud
           </motion.div>
 
+          {/* Location */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
+            className="flex items-center gap-2"
+          >
+            <svg className="w-3 h-3 text-white/20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span className="text-[10px] tracking-[0.1em] text-white/20">
+              Campinas, SP, Brazil
+            </span>
+          </motion.div>
+
           {/* Download CV Link */}
-          <motion.a
+          {/* <motion.a
             href="/cv-saylor-damasceno.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -124,7 +124,7 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
             <svg className="w-3 h-3 transition-transform duration-300 group-hover:translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-          </motion.a>
+          </motion.a> */}
 
         </div>
       </motion.div>
