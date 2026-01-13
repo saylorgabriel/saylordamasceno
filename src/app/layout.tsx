@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ConsoleEasterEgg } from "@/components/ConsoleEasterEgg";
 
 export const metadata: Metadata = {
   title: "Saylor Damasceno | Tech Lead & AI Engineer",
@@ -73,6 +74,7 @@ export default function RootLayout({
         <meta name="distribution" content="Global" />
       </head>
       <body className="antialiased overflow-hidden">
+        <ConsoleEasterEgg />
         {children}
       </body>
     </html>
