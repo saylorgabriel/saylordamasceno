@@ -190,7 +190,7 @@ export default function Home() {
       {/* Scroll/Swipe hint - only show on first section */}
       {currentSection === 0 && (
         <motion.div
-          className="fixed bottom-16 md:bottom-8 left-1/2 -translate-x-1/2 z-40"
+          className="fixed bottom-12 left-0 right-0 flex justify-center z-40"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2, duration: 1 }}
