@@ -87,18 +87,6 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
             style={{ transformOrigin: 'left' }}
           />
 
-          {/* Availability Status */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2, duration: 1 }}
-            className="flex items-center gap-2"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-emerald-400/80" />
-            <span className="text-[9px] tracking-[0.15em] text-emerald-400/60 uppercase">
-              Open to Projects
-            </span>
-          </motion.div>
         </div>
       </motion.div>
 
@@ -219,6 +207,25 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
           </motion.a>
+        </div>
+      </motion.div>
+
+      {/* Bottom Center - Availability Status */}
+      <motion.div
+        className="fixed bottom-6 left-0 right-0 flex justify-center z-50"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay: 2 }}
+      >
+        <div className="flex items-center gap-2">
+          <motion.div
+            className="w-1.5 h-1.5 rounded-full bg-emerald-400/80"
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <span className="text-[9px] tracking-[0.15em] text-emerald-400/60 uppercase">
+            Open to Projects
+          </span>
         </div>
       </motion.div>
     </>
