@@ -37,46 +37,6 @@ Tech Lead com 15+ anos de experiência em Engenharia de Software, especialista e
 | Language | TypeScript |
 | Deploy | Docker |
 
-## Quick Start
-
-### Com Docker (Recomendado)
-
-```bash
-docker compose up
-```
-
-Acesse: http://localhost:3333
-
-### Desenvolvimento Local
-
-```bash
-# Instalar dependências
-npm install
-
-# Rodar em desenvolvimento
-npm run dev
-```
-
-Acesse: http://localhost:3000
-
-## Estrutura do Projeto
-
-```
-src/
-├── app/
-│   ├── page.tsx          # Página principal com navegação
-│   ├── layout.tsx        # Layout com meta tags SEO
-│   └── globals.css       # Estilos globais
-├── components/
-│   ├── ParticleText.tsx  # Texto de partículas holográficas
-│   ├── Scene.tsx         # Canvas 3D com Three.js
-│   ├── HUD.tsx           # Interface para recrutadores
-│   └── CustomCursor.tsx  # Cursor personalizado
-└── hooks/
-    ├── useMousePosition.ts
-    └── useFPS.ts
-```
-
 ## Contato
 
 - **Email:** saylorgabriel@hotmail.com
