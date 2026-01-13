@@ -159,7 +159,7 @@ export default function Home() {
           exit={{ y: -20, opacity: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="text-[15px] md:text-[18px] tracking-[0.2em] md:tracking-[0.4em] text-white/40 font-light uppercase text-center mt-[5px]">
+          <div className="text-[13px] tracking-[0.2em] md:tracking-[0.4em] text-white/40 font-light uppercase text-center mt-[5px]">
             {currentContent.subtitle}
           </div>
         </motion.div>
