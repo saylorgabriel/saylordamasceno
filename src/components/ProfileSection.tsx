@@ -277,6 +277,17 @@ export function ProfileSection() {
             >
               GitHub
             </motion.a>
+            <span className="text-white/20">•</span>
+            <motion.a
+              href="https://saylorgabriel.github.io/atlas-lp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] tracking-[0.2em] text-white/40 hover:text-emerald-400/70 transition-colors uppercase"
+              whileHover={{ scale: 1.1, y: -2 }}
+              transition={{ duration: 0.2 }}
+            >
+              Atlas
+            </motion.a>
           </div>
         </motion.div>
       </div>
