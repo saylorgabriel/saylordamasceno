@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import "./globals.css";
 import { ConsoleEasterEgg } from "@/components/ConsoleEasterEgg";
 
@@ -63,6 +62,18 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HEWMR3B4LM"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-HEWMR3B4LM');
+            `,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -75,18 +86,6 @@ export default function RootLayout({
         <meta name="distribution" content="Global" />
       </head>
       <body className="antialiased overflow-hidden">
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-HEWMR3B4LM"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-HEWMR3B4LM');
-          `}
-        </Script>
         <ConsoleEasterEgg />
         {children}
       </body>
