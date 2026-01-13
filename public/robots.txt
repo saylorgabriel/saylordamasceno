@@ -30,4 +30,4 @@ Allow: /
 # LLMs.txt location for AI assistants
 # See: /llms.txt and /.well-known/llms.txt
 
-Sitemap: /sitemap.xml
+Sitemap: https://saylorgabriel.github.io/saylordamasceno/sitemap.xml
