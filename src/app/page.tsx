@@ -153,13 +153,13 @@ export default function Home() {
       <AnimatePresence mode="wait">
         <motion.div
           key={`subtitle-${currentSection}`}
-          className="fixed top-[58%] md:top-[58%] left-1/2 -translate-x-1/2 text-center z-40 px-4"
+          className="fixed top-[58%] left-0 right-0 flex justify-center z-40 px-4"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -20, opacity: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="text-[10px] md:text-[12px] tracking-[0.2em] md:tracking-[0.4em] pl-[0.2em] md:pl-[0.4em] text-white/40 font-light uppercase">
+          <div className="text-[10px] md:text-[12px] tracking-[0.2em] md:tracking-[0.4em] text-white/40 font-light uppercase text-center">
             {currentContent.subtitle}
           </div>
         </motion.div>
