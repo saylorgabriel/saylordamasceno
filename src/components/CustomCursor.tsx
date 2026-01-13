@@ -10,6 +10,7 @@ interface CustomCursorProps {
 export function CustomCursor({ mousePosition }: CustomCursorProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   const springConfig = { damping: 30, stiffness: 500, mass: 0.3 };
   const x = useSpring(mousePosition.x, springConfig);
@@ -21,6 +22,21 @@ export function CustomCursor({ mousePosition }: CustomCursorProps) {
   }, [mousePosition.x, mousePosition.y, x, y]);
 
   useEffect(() => {
+    // Detect touch device
+    const checkTouchDevice = () => {
+      const hasTouchScreen = (
+        'ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.matchMedia('(hover: none) and (pointer: coarse)').matches
+      );
+      setIsTouchDevice(hasTouchScreen);
+    };
+
+    checkTouchDevice();
+
+    // Also check on resize (for responsive testing)
+    window.addEventListener('resize', checkTouchDevice);
+
     const handleMouseEnter = () => setIsVisible(true);
     const handleMouseLeave = () => setIsVisible(false);
 
@@ -37,6 +53,7 @@ export function CustomCursor({ mousePosition }: CustomCursorProps) {
     const timer = setTimeout(() => setIsVisible(true), 100);
 
     return () => {
+      window.removeEventListener('resize', checkTouchDevice);
       document.removeEventListener("mouseenter", handleMouseEnter);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseover", handleMouseOver);
@@ -44,7 +61,8 @@ export function CustomCursor({ mousePosition }: CustomCursorProps) {
     };
   }, []);
 
-  if (!isVisible) return null;
+  // Don't render on touch devices or when not visible
+  if (!isVisible || isTouchDevice) return null;
 
   return (
     <motion.div

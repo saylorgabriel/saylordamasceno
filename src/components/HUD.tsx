@@ -27,12 +27,12 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
     <>
       {/* Top Left - Professional Identity */}
       <motion.div
-        className="fixed top-8 left-8 z-50"
+        className="fixed top-4 left-4 md:top-8 md:left-8 z-50"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.3 }}
       >
-        <div className="space-y-4">
+        <div className="space-y-2 md:space-y-4">
           {/* Status indicator */}
           <div className="flex items-center gap-2">
             <motion.div
@@ -106,12 +106,12 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
 
       {/* Top Right - Contact Panel */}
       <motion.div
-        className="fixed top-8 right-8 z-50"
+        className="fixed top-4 right-4 md:top-8 md:right-8 z-50"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.5 }}
       >
-        <div className="text-right space-y-4">
+        <div className="text-right space-y-2 md:space-y-4">
           {/* Contact Header */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -145,7 +145,7 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
 
       {/* Bottom Left - Section Indicator */}
       <motion.div
-        className="fixed bottom-8 left-8 z-50"
+        className="fixed bottom-4 left-4 md:bottom-8 md:left-8 z-50"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.5 }}
@@ -168,12 +168,12 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
 
       {/* Bottom Right - Credentials */}
       <motion.div
-        className="fixed bottom-8 right-8 z-50 text-right"
+        className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 text-right"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.7 }}
       >
-        <div className="space-y-3">
+        <div className="space-y-2 md:space-y-3">
           {/* Experience Badge */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -234,7 +234,7 @@ function ContactLink({ href, label, icon }: { href: string; label: string; icon:
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-end gap-2 text-[10px] tracking-[0.1em] text-white/35 hover:text-white/70 transition-all duration-300 cursor-none group py-1"
+      className="flex items-center justify-end gap-2 text-[10px] tracking-[0.1em] text-white/35 hover:text-white/70 transition-all duration-300 cursor-none md:cursor-none cursor-pointer group py-1"
       whileHover={{ x: -4 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
     >

@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useMemo, useRef } from "react";
+import { Suspense, useMemo, useRef, useState, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import { ParticleText } from "./ParticleText";
 import * as THREE from "three";
@@ -12,12 +12,54 @@ interface SceneProps {
   text?: string;
 }
 
+// Hook to get responsive camera settings
+function useResponsiveCamera() {
+  const [settings, setSettings] = useState({
+    position: [0, 0, 8] as [number, number, number],
+    fov: 45,
+    dpr: [1, 2] as [number, number],
+  });
+
+  useEffect(() => {
+    const updateSettings = () => {
+      const width = window.innerWidth;
+      if (width < 480) {
+        setSettings({
+          position: [0, 0, 10],
+          fov: 50,
+          dpr: [1, 1.5],
+        });
+      } else if (width < 768) {
+        setSettings({
+          position: [0, 0, 9],
+          fov: 48,
+          dpr: [1, 1.5],
+        });
+      } else {
+        setSettings({
+          position: [0, 0, 8],
+          fov: 45,
+          dpr: [1, 2],
+        });
+      }
+    };
+
+    updateSettings();
+    window.addEventListener('resize', updateSettings);
+    return () => window.removeEventListener('resize', updateSettings);
+  }, []);
+
+  return settings;
+}
+
 export function Scene({ mousePosition, onParticleCount, text = "SAYLOR" }: SceneProps) {
+  const cameraSettings = useResponsiveCamera();
+
   return (
     <div className="fixed inset-0 z-0">
       <Canvas
-        camera={{ position: [0, 0, 8], fov: 45 }}
-        dpr={[1, 2]}
+        camera={{ position: cameraSettings.position, fov: cameraSettings.fov }}
+        dpr={cameraSettings.dpr}
         gl={{
           antialias: true,
           alpha: true,

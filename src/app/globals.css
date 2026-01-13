@@ -151,3 +151,28 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  /* Show default cursor on touch devices */
+  * {
+    cursor: auto !important;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* Touch device detection - show cursor */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
