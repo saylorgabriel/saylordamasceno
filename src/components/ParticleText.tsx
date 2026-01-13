@@ -1,13 +1,44 @@
 "use client";
 
-import { useRef, useEffect, useState, useMemo } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useRef, useEffect, useState, useMemo, useCallback } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
 interface ParticleTextProps {
   text: string;
   mousePosition: { normalizedX: number; normalizedY: number };
   onParticleCount?: (count: number) => void;
+}
+
+// Hook to get responsive font size
+function useResponsiveFontSize() {
+  const [fontSize, setFontSize] = useState(90);
+  const [scale, setScale] = useState(0.02);
+
+  useEffect(() => {
+    const updateSize = () => {
+      const width = window.innerWidth;
+      if (width < 480) {
+        setFontSize(40);
+        setScale(0.018);
+      } else if (width < 768) {
+        setFontSize(55);
+        setScale(0.019);
+      } else if (width < 1024) {
+        setFontSize(70);
+        setScale(0.02);
+      } else {
+        setFontSize(90);
+        setScale(0.02);
+      }
+    };
+
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
+  return { fontSize, scale };
 }
 
 // Perlin noise
@@ -53,6 +84,7 @@ export function ParticleText({ text, mousePosition, onParticleCount }: ParticleT
   const velocities = useRef<Float32Array | null>(null);
   const time = useRef(0);
   const noise = useMemo(() => createNoise(), []);
+  const { fontSize: responsiveFontSize, scale: responsiveScale } = useResponsiveFontSize();
 
   useEffect(() => {
     const createParticles = async () => {
@@ -67,7 +99,7 @@ export function ParticleText({ text, mousePosition, onParticleCount }: ParticleT
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
-      const fontSize = 90;
+      const fontSize = responsiveFontSize;
       const textWidth = text.length * fontSize * 0.72;
       canvas.width = textWidth + 60;
       canvas.height = fontSize * 1.3;
@@ -75,7 +107,7 @@ export function ParticleText({ text, mousePosition, onParticleCount }: ParticleT
       ctx.fillStyle = "#000";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      const fontLoaded = document.fonts.check("300 90px Orbitron");
+      const fontLoaded = document.fonts.check(`300 ${fontSize}px Orbitron`);
       const fontFamily = fontLoaded ? "Orbitron" : "SF Pro Display, -apple-system, sans-serif";
 
       ctx.font = `300 ${fontSize}px ${fontFamily}`;
@@ -88,7 +120,9 @@ export function ParticleText({ text, mousePosition, onParticleCount }: ParticleT
       const data = imageData.data;
 
       const positions: number[] = [];
-      const gap = 1.2; // Very dense
+      // Adjust gap based on screen size for performance on mobile
+      const isMobile = window.innerWidth < 768;
+      const gap = isMobile ? 1.8 : 1.2;
 
       for (let y = 0; y < canvas.height; y += gap) {
         for (let x = 0; x < canvas.width; x += gap) {
@@ -96,8 +130,8 @@ export function ParticleText({ text, mousePosition, onParticleCount }: ParticleT
           const brightness = data[i];
 
           if (brightness > 50) {
-            const px = (x - canvas.width / 2) * 0.02;
-            const py = -(y - canvas.height / 2) * 0.02;
+            const px = (x - canvas.width / 2) * responsiveScale;
+            const py = -(y - canvas.height / 2) * responsiveScale;
             const pz = 0;
             positions.push(px, py, pz);
           }
@@ -127,7 +161,7 @@ export function ParticleText({ text, mousePosition, onParticleCount }: ParticleT
     };
 
     createParticles();
-  }, [text, onParticleCount]);
+  }, [text, onParticleCount, responsiveFontSize, responsiveScale]);
 
   useFrame((state, delta) => {
     if (!pointsRef.current || !originalPositions.current || !velocities.current) return;
