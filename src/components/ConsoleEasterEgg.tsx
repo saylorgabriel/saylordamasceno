@@ -34,7 +34,7 @@ export function ConsoleEasterEgg() {
     console.log("%cSaylor Damasceno", styles.title);
     console.log("%cTech Lead | 15+ Years in Software Engineering", styles.text);
     console.log("%c📍 Campinas, SP, Brazil", styles.text);
-    console.log("%c🏢 Currently @ Consolide", styles.text);
+    console.log("%c🏢 Currently @ Atlas", styles.text);
 
     console.log("%c\n🛠️ EXPERTISE", styles.section);
     console.log("%c• Back-end Development (PHP Specialist)", styles.text);
