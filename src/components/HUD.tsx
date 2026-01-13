@@ -56,7 +56,7 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
           >
             <div className="text-[11px] tracking-[0.15em] text-white/40">
               Tech Lead
-            </div>
+            </div> <br />
             <div className="text-[10px] tracking-[0.1em] text-white/25">
               @ Atlas
             </div>
@@ -87,13 +87,53 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
             style={{ transformOrigin: 'left' }}
           />
 
+          {/* Experience Badge */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2, duration: 1 }}
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.02]"
+          >
+            <span className="text-[11px] tracking-[0.1em] text-white/50 font-light">
+              15+ Years Experience
+            </span>
+          </motion.div>
+
+          {/* Skills Summary */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.2, duration: 1 }}
+            className="text-[9px] tracking-[0.15em] text-white/25"
+          >
+            PHP • AI/LLMs • Cloud
+          </motion.div>
+
+          {/* Download CV Link */}
+          <motion.a
+            href="/cv-saylor-damasceno.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.4, duration: 1 }}
+            className="inline-flex items-center gap-2 text-[10px] tracking-[0.15em] text-white/30 hover:text-white/60 transition-all duration-300 cursor-none group"
+            whileHover={{ x: 3 }}
+          >
+            <span>Download CV</span>
+            <svg className="w-3 h-3 transition-transform duration-300 group-hover:translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+          </motion.a>
+
         </div>
       </motion.div>
 
       {/* Top Right - Contact Panel */}
-      <motion.div
+      < motion.div
         className="fixed top-4 right-4 md:top-8 md:right-8 z-50"
-        initial={{ opacity: 0, y: -10 }}
+        initial={{ opacity: 0, y: -10 }
+        }
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.5 }}
       >
@@ -127,10 +167,10 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
             />
           </motion.div>
         </div>
-      </motion.div>
+      </motion.div >
 
       {/* Bottom Left - Section Indicator */}
-      <motion.div
+      < motion.div
         className="fixed bottom-4 left-4 md:bottom-8 md:left-8 z-50"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -150,68 +190,10 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
             />
           </div>
         </div>
-      </motion.div>
-
-      {/* Bottom Right - Credentials */}
-      <motion.div
-        className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 text-right"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.7 }}
-      >
-        <div className="space-y-2 md:space-y-3">
-          {/* Experience Badge */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.02]"
-          >
-            <span className="text-[11px] tracking-[0.1em] text-white/50 font-light">
-              15+ Years Experience
-            </span>
-          </motion.div>
-
-          {/* Skills Summary */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.8, duration: 1 }}
-            className="text-[9px] tracking-[0.15em] text-white/25"
-          >
-            PHP • AI/LLMs • Cloud
-          </motion.div>
-
-          {/* Divider */}
-          <motion.div
-            className="w-12 h-px bg-white/10 ml-auto"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ delay: 2, duration: 0.8 }}
-            style={{ transformOrigin: 'right' }}
-          />
-
-          {/* Download CV Link */}
-          <motion.a
-            href="/cv-saylor-damasceno.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2.2, duration: 1 }}
-            className="inline-flex items-center gap-2 text-[10px] tracking-[0.15em] text-white/30 hover:text-white/60 transition-all duration-300 cursor-none group"
-            whileHover={{ x: -3 }}
-          >
-            <span>Download CV</span>
-            <svg className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </svg>
-          </motion.a>
-        </div>
-      </motion.div>
+      </motion.div >
 
       {/* Bottom Center - Availability Status */}
-      <motion.div
+      < motion.div
         className="fixed bottom-6 left-0 right-0 flex justify-center z-50"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -227,7 +209,7 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
             Open to Projects
           </span>
         </div>
-      </motion.div>
+      </motion.div >
     </>
   );
 }
