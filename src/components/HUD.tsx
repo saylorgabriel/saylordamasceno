@@ -130,11 +130,6 @@ export function HUD({ fps, particleCount, currentSection = 0, totalSections = 1 
             className="space-y-3"
           >
             <ContactLink
-              href="mailto:saylorgabriel@hotmail.com"
-              label="saylorgabriel@hotmail.com"
-              icon={<EmailIcon />}
-            />
-            <ContactLink
               href="https://www.linkedin.com/in/saylordamasceno/"
               label="in/saylordamasceno"
               icon={<LinkedInIcon />}
@@ -252,14 +247,6 @@ function ContactLink({ href, label, icon }: { href: string; label: string; icon:
 }
 
 // Icons
-function EmailIcon() {
-  return (
-    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-    </svg>
-  );
-}
-
 function LinkedInIcon() {
   return (
     <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
