@@ -279,7 +279,7 @@ export function ProfileSection() {
             </motion.a>
             <span className="text-white/20">•</span>
             <motion.a
-              href="https://saylorgabriel.github.io/atlas-lp"
+              href="http://atlascopilot.com.br/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[10px] tracking-[0.2em] text-white/40 hover:text-emerald-400/70 transition-colors uppercase"
