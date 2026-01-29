@@ -7,6 +7,12 @@ const profileData = {
 
   experience: [
     {
+      company: "Otrix Labs",
+      period: "2025 - Present",
+      role: "Founder & CTO",
+      highlights: ["AI Innovation", "Product Strategy", "Technical Leadership"]
+    },
+    {
       company: "Consolide",
       period: "2021 - Present",
       role: "Tech Lead",
@@ -17,6 +23,24 @@ const profileData = {
       period: "2007 - 2021",
       role: "13+ years",
       highlights: ["Tech Lead", "Product Manager", "Systems Analyst"]
+    }
+  ],
+
+  projects: [
+    {
+      name: "Atlas Copilot",
+      role: "Founder & CTO",
+      description: "IA que organiza o caos do WhatsApp. Resumos, busca inteligente e tarefas extraídas automaticamente das conversas."
+    },
+    {
+      name: "QueroDocumento",
+      role: "Arquiteto de Software",
+      description: "Consulta de protestos e certidões em cartórios de todo o Brasil. Processo 100% digital."
+    },
+    {
+      name: "PollingData",
+      role: "Consultor Técnico",
+      description: "Intelligence dashboard para análise de dados e pesquisas de mercado. Insights estratégicos através de visualizações avançadas."
     }
   ],
 
@@ -176,6 +200,33 @@ export function ProfileSection() {
           </FloatingCard>
         </div>
 
+        {/* Projects Card */}
+        <div className="mb-6">
+          <FloatingCard index={1.5}>
+            <h2 className="text-[10px] tracking-[0.3em] text-emerald-400/70 uppercase mb-4">Featured Projects</h2>
+            <div className="space-y-4">
+              {profileData.projects.map((project, idx) => (
+                <motion.div
+                  key={idx}
+                  className="flex flex-col gap-2 pb-4 border-b border-white/5 last:border-0 last:pb-0"
+                  whileHover={{ x: 4 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <div>
+                      <h3 className="text-[12px] text-white/60 font-medium">{project.name}</h3>
+                      <p className="text-[10px] text-white/30">{project.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-white/40 font-light leading-relaxed">
+                    {project.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </FloatingCard>
+        </div>
+
         {/* Skills Card */}
         <div className="mb-6">
           <FloatingCard index={2}>
@@ -287,6 +338,17 @@ export function ProfileSection() {
               transition={{ duration: 0.2 }}
             >
               Atlas
+            </motion.a>
+            <span className="text-white/20">•</span>
+            <motion.a
+              href="https://otrixlabs.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] tracking-[0.2em] text-white/40 hover:text-emerald-400/70 transition-colors uppercase"
+              whileHover={{ scale: 1.1, y: -2 }}
+              transition={{ duration: 0.2 }}
+            >
+              Otrix Labs
             </motion.a>
           </div>
         </motion.div>
